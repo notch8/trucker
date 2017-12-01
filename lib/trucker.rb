@@ -10,7 +10,7 @@ module Trucker
       model = name.to_s.classify
   
       # Wipe out existing records
-      model.constantize.delete_all
+      model.constantize.delete_all unless options[:keep_existing_records]
 
       # Status message
       status = "Migrating "
